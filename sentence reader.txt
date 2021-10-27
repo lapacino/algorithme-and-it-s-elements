@@ -1,0 +1,35 @@
+// sentence reader
+
+function sentenceReader(sentence) {
+
+	var nbrChr = sentence.length;
+	console.log(`number of character: ${nbrChr}`);
+
+	var nbrWord = 0;
+	for (var i = 0; i < nbrChr; i++) {
+
+		if (sentence[i] === " ") {
+			
+			nbrWord++;	
+		}
+	}
+
+	console.log(`number of word: ${nbrWord + 1}`);
+
+	var vowelCount = 0;
+
+	const vowelList = ['A', 'a', 'E', 'e', 'I', 'i', 'O', 'o', 'U','u']
+
+	for (vowel of vowelList) {
+		for (var i = 0; i < nbrChr; i++){
+			if (sentence[i] == vowel) {
+				vowelCount++;
+			}
+		}
+		
+	}
+
+	console.log(`number of vowel: ${vowelCount}`);
+}
+
+sentenceReader("hello world programming is so good.")
